@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "298627a3-09dd-425f-88c1-6bc1975b7abe",
+		"name": "Bancolocal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14947725"
+	},
+	"item": [
+		{
+			"name": "cliente-service",
+			"item": [
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/clientes/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contrasena\": \"passtestcliente4\",\r\n    \"persona\": {\r\n        \"nombre\": \"Roberto Pérez\",\r\n        \"genero\": \"Masculino\",\r\n        \"edad\": \"20\",\r\n        \"identificacion\": \"8897994\",\r\n        \"direccion\": \"Calle Alguna 168\",\r\n        \"telefono\": \"666396842\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contrasena\": \"porlao\",\r\n    \"estado\": false,\r\n    \"persona\": {\r\n        \"nombre\": \"Moreno Pérez\",\r\n        \"genero\": \"Masculino\",\r\n        \"edad\": \"80\",\r\n        \"direccion\": \"Calle Cualquiera 111\",\r\n        \"telefono\": \"459489494\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/clientes/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/clientes/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cuenta-movimiento",
+			"item": [
+				{
+					"name": "Cuentas",
+					"item": [
+						{
+							"name": "Listar Cuentas",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/cuentas/all/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"cuentas",
+										"all",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Cuenta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/cuentas/680702",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"cuentas",
+										"680702"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear Cuenta",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"clienteId\": 4,\r\n    \"tipoCuenta\": \"Ahorros\",\r\n    \"saldoInicial\": 1000,\r\n    \"estado\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/cuentas",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"cuentas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar Cuenta",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tipoCuenta\": \"Corriente\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/cuentas/680702",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"cuentas",
+										"680702"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Cuenta",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/cuentas/778770",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"cuentas",
+										"778770"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Movimientos",
+					"item": [
+						{
+							"name": "Crear Movimientos",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"valor\": -50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/movimientos?numeroCuenta=619909",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"movimientos"
+									],
+									"query": [
+										{
+											"key": "numeroCuenta",
+											"value": "619909"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Movimientos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/movimientos/619909",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"movimientos",
+										"619909"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reporte Movimientos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/movimientos/reporte?fechaInicio=2024-10-24T00:00:00&fechaFin=2024-10-25T15:00:00&clienteId=4",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"movimientos",
+										"reporte"
+									],
+									"query": [
+										{
+											"key": "fechaInicio",
+											"value": "2024-10-24T00:00:00"
+										},
+										{
+											"key": "fechaFin",
+											"value": "2024-10-25T15:00:00"
+										},
+										{
+											"key": "clienteId",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
